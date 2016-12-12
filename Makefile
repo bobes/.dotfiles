@@ -47,6 +47,11 @@ bin::
 	rm -rf ~/bin/*
 	stow -v -t ~/bin bin
 
+fonts::
+	mkdir -p ~/.fonts
+	rm -rf ~/.fonts/*
+	stow -v -t ~/.fonts fonts
+
 gtk::
 	mkdir -p ~/.config/gtk-3.0
 	rm -rf ~/.config/gtk-3.0/*
