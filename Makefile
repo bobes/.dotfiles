@@ -4,6 +4,7 @@ sudoers::
 apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
+	sudo apt-key add etc/apt/signing_keys/dropbox.pub
 	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
@@ -24,6 +25,8 @@ apt-install::
 		libinput-tools xinput \
 		lxappearance \
 		i3 virtualbox \
+		python-gpgme \
+		dropbox \
 		enpass \
 		google-chrome-stable \
 		spotify-client
