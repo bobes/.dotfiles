@@ -37,7 +37,7 @@ apt-install::
 		google-chrome-stable \
 		spotify-client
 
-install: stow bash bin fonts gtk git i3
+install: stow bash bin fonts gtk git i3 ssh
 
 stow::
 	stow -v stow
@@ -63,7 +63,15 @@ gtk::
 
 git::
 	stow -v git
+
 i3::
 	mkdir -p ~/.config/i3
 	rm -rf ~/.config/i3/*
 	stow -v -t ~/.config/i3 i3
+
+ssh::
+	mkdir -p ~/.ssh/config.d
+	chmod 700 ~/.ssh/config.d
+	chmod 600 ~/.ssh/config.d/*
+	stow -v -t ~/.ssh ssh
+	chmod 600 ~/.ssh/config

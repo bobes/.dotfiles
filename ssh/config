@@ -1,0 +1,16 @@
+KeepAlive yes
+TCPKeepAlive yes
+ServerAliveInterval 60
+ServerAliveCountMax 10
+GSSAPIAuthentication no
+ConnectTimeout 300
+
+Host *
+  Protocol 2
+  IdentityFile ~/.ssh/id_rsa
+  PreferredAuthentications publickey,password,keyboard-interactive
+  IPQoS lowdelay
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+Include ~/.ssh/config.d/*
