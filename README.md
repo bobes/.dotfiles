@@ -22,7 +22,8 @@ cd ~
 git clone git@github.com:bobes/.dotfiles.git
 ```
 
-Add user to sudoers:
+Add user to sudoers (root password needed):
 ```
-su 'cp ~/.dotfiles/etc/sudoers.d/sudoers-bobes /etc/sudoers.d/ && chown 0 /etc/sudoers.d/sudoers-bobes && chmod 0400 /etc/sudoers.d/sudoers-bobes'
+cd ~/.dotfiles
+make sudoers
 ```
