@@ -37,7 +37,7 @@ apt-install::
 		google-chrome-stable \
 		spotify-client
 
-install: bash bin
+install: stow bash bin fonts gtk git i3
 
 stow::
 	stow -v stow
