@@ -7,6 +7,9 @@
 	pager = less -FRSX
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
+[branch]
+	autosetupmerge = true
+
 [color]
 	diff = auto
 	branch = auto
@@ -35,3 +38,27 @@
 	added = green
 	changed = red
 	untracked = cyan
+
+[diff]
+	renames = copy
+
+[format]
+	pretty = %C(yellow)%h%C(red)%d %C(reset)%s %C(green)%an %C(bold black)%ci
+
+[log]
+	date = iso
+
+[pager]
+	status = true
+	show-branch = true
+
+[push]
+	default = current
+
+[rebase]
+	stat = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
