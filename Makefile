@@ -21,9 +21,11 @@ apt-refresh::
 
 apt-install::
 	sudo apt-get install \
+		dnscrypt-proxy \
 		curl \
 		htop \
 		git \
+		redshift \
 		libinput-tools \
 		xinput \
 		lxappearance \
@@ -37,41 +39,9 @@ apt-install::
 		google-chrome-stable \
 		spotify-client
 
-install: stow bash bin fonts gtk git i3 ssh
-
-stow::
+install::
 	stow -v stow
-
-bash::
-	stow -v bash
-	. ~/.bash_profile
-
-bin::
-	mkdir -p ~/bin
-	rm -rf ~/bin/*
-	stow -v -t ~/bin bin
-
-fonts::
-	mkdir -p ~/.fonts
-	rm -rf ~/.fonts/*
-	stow -v -t ~/.fonts fonts
-
-gtk::
-	mkdir -p ~/.config/gtk-3.0
-	rm -rf ~/.config/gtk-3.0/*
-	stow -v -t ~/.config/gtk-3.0 gtk
-
-git::
-	stow -v git
-
-i3::
-	mkdir -p ~/.config/i3
-	rm -rf ~/.config/i3/*
-	stow -v -t ~/.config/i3 i3
-
-ssh::
-	mkdir -p ~/.ssh/config.d
+	stow -v home
+	chmod 600 ~/.ssh/config
 	chmod 700 ~/.ssh/config.d
 	chmod 600 ~/.ssh/config.d/*
-	stow -v -t ~/.ssh ssh
-	chmod 600 ~/.ssh/config
