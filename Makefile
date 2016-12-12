@@ -39,6 +39,9 @@ apt-install::
 
 install: bash bin
 
+stow::
+	stow -v stow
+
 bash::
 	stow -v bash
 	. ~/.bash_profile
