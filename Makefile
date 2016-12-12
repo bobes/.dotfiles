@@ -45,3 +45,8 @@ bin::
 	mkdir -p ~/bin
 	rm -rf ~/bin/*
 	stow -v -t ~/bin bin
+
+i3::
+	mkdir -p ~/.config/i3
+	rm -rf ~/.config/i3/*
+	stow -v -t ~/.config/i3 i3
