@@ -28,6 +28,7 @@ apt-install::
 		lxappearance \
 		i3 \
 		virtualbox \
+		rofi \
 		python-gpgme \
 		dropbox \
 		enpass \
