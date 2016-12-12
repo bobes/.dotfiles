@@ -22,6 +22,7 @@ apt-refresh::
 apt-install::
 	sudo apt-get install \
 		curl \
+		htop \
 		git \
 		libinput-tools \
 		xinput \
