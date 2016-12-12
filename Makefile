@@ -30,3 +30,6 @@ apt-install::
 		enpass \
 		google-chrome-stable \
 		spotify-client
+
+bash::
+	stow bash
