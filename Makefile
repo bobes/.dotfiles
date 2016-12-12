@@ -9,4 +9,7 @@ apt-refresh::
 
 apt-install::
 	sudo apt-get install \
-		curl git
+		curl git \
+		libinput-tools xinput \
+		lxappearance \
+		i3 virtualbox
