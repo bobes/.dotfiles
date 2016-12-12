@@ -21,10 +21,13 @@ apt-refresh::
 
 apt-install::
 	sudo apt-get install \
-		curl git \
-		libinput-tools xinput \
+		curl \
+		git \
+		libinput-tools \
+		xinput \
 		lxappearance \
-		i3 virtualbox \
+		i3 \
+		virtualbox \
 		python-gpgme \
 		dropbox \
 		enpass \
