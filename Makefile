@@ -6,6 +6,7 @@ apt: apt-keys apt-sources apt-refresh apt-install
 apt-keys::
 	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
+	sudo apt-key add etc/apt/signing_keys/spotify.pub
 
 apt-sources::
 	sudo rm /etc/apt/sources.list.d/*
@@ -24,4 +25,5 @@ apt-install::
 		lxappearance \
 		i3 virtualbox \
 		enpass \
-		google-chrome-stable
+		google-chrome-stable \
+		spotify-client
