@@ -31,5 +31,13 @@ apt-install::
 		google-chrome-stable \
 		spotify-client
 
+install: bash bin
+
 bash::
-	stow bash
+	stow -v bash
+	. ~/.bash_profile
+
+bin::
+	mkdir -p ~/bin
+	rm -rf ~/bin/*
+	stow -v -t ~/bin bin
