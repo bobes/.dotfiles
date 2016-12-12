@@ -26,6 +26,7 @@ apt-install::
 		libinput-tools \
 		xinput \
 		lxappearance \
+		numix-gtk-theme \
 		i3 \
 		virtualbox \
 		rofi \
@@ -45,6 +46,11 @@ bin::
 	mkdir -p ~/bin
 	rm -rf ~/bin/*
 	stow -v -t ~/bin bin
+
+gtk::
+	mkdir -p ~/.config/gtk-3.0
+	rm -rf ~/.config/gtk-3.0/*
+	stow -v -t ~/.config/gtk-3.0 gtk
 
 i3::
 	mkdir -p ~/.config/i3
