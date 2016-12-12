@@ -4,6 +4,7 @@ sudoers::
 apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
+	sudo apt-key add etc/apt/signing_keys/google.pub
 
 apt-sources::
 	sudo rm /etc/apt/sources.list.d/*
@@ -20,4 +21,5 @@ apt-install::
 		curl git \
 		libinput-tools xinput \
 		lxappearance \
-		i3 virtualbox
+		i3 virtualbox \
+		google-chrome-stable
