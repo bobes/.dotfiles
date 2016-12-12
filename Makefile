@@ -4,6 +4,7 @@ sudoers::
 apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
+	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 
 apt-sources::
@@ -22,4 +23,5 @@ apt-install::
 		libinput-tools xinput \
 		lxappearance \
 		i3 virtualbox \
+		enpass \
 		google-chrome-stable
