@@ -1,0 +1,6 @@
+[user]
+	name = Vladimir Bobes Tuzinsky
+	email = vladimir@tuzinsky.com
+
+[core]
+	excludesfile = /home/bobes/.gitignore

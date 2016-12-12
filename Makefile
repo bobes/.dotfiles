@@ -61,6 +61,8 @@ gtk::
 	rm -rf ~/.config/gtk-3.0/*
 	stow -v -t ~/.config/gtk-3.0 gtk
 
+git::
+	stow -v git
 i3::
 	mkdir -p ~/.config/i3
 	rm -rf ~/.config/i3/*
