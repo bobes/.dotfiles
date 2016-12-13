@@ -5,7 +5,6 @@ apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
 	sudo apt-key add etc/apt/signing_keys/dropbox.pub
-	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
 
@@ -24,18 +23,21 @@ apt-install::
 		dnscrypt-proxy \
 		curl \
 		htop \
+		ack-grep \
 		git \
-		redshift \
+		apt-transport-https ca-certificates gnupg2 \
+		autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev \
 		libinput-tools \
 		xinput \
+		xbacklight \
 		lxappearance \
 		numix-gtk-theme \
 		i3 \
 		virtualbox \
+		compton \
 		rofi \
 		python-gpgme \
 		dropbox \
-		enpass \
 		google-chrome-stable \
 		spotify-client
 
