@@ -4,6 +4,7 @@ sudoers::
 apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
+	sudo apt-key add etc/apt/signing_keys/docker.pub
 	sudo apt-key add etc/apt/signing_keys/dropbox.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
@@ -34,6 +35,7 @@ apt-install::
 		numix-gtk-theme \
 		i3 \
 		virtualbox \
+		docker-engine \
 		compton \
 		rofi \
 		python-gpgme \
