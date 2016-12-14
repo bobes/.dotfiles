@@ -21,27 +21,48 @@ apt-refresh::
 
 apt-install::
 	sudo apt-get install \
-		dnscrypt-proxy \
-		curl \
-		htop \
 		ack-grep \
+		apt-transport-https \
+		autoconf \
+		automake \
+		bison \
+		build-essential \
+		ca-certificates gnupg2 \
+		compton \
+		curl \
+		dnscrypt-proxy \
+		docker-engine \
+		dropbox \
 		git \
-		apt-transport-https ca-certificates gnupg2 \
-		autoconf bison build-essential libssl-dev libyaml-dev libreadline-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev \
+		git-core \
+		google-chrome-stable \
+		htop \
+		i3 \
+		libcurl4-openssl-dev \
+		libffi-dev \
+		libgdbm-dev \
+		libgdbm3 \
 		libinput-tools \
-		xinput \
-		xbacklight \
+		libncurses5-dev \
+		libreadline-dev \
+		libsqlite3-dev \
+		libssl-dev \
+		libtool \
+		libxml2-dev \
+		libxslt1-dev \
+		libyaml-dev \
 		lxappearance \
 		numix-gtk-theme \
-		i3 \
-		virtualbox \
-		docker-engine \
-		compton \
-		rofi \
+		patch \
 		python-gpgme \
-		dropbox \
-		google-chrome-stable \
-		spotify-client
+		rofi \
+		scrot \
+		spotify-client \
+		sqlite3 \
+		virtualbox \
+		xbacklight \
+		xinput \
+		zlib1g-dev
 
 install::
 	stow -v stow
