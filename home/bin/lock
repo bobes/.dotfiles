@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+scrot /tmp/screen.png
+original_size=$(identify -format '%G' /tmp/screen.png)
+echo $original_size
+convert /tmp/screen.png -filter Gaussian -resize 10% -define filter:sigma=1.5 -resize $original_size  /tmp/screen.png
+i3lock -e -f -i /tmp/screen.png
+rm /tmp/screen.png
+
