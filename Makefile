@@ -23,6 +23,7 @@ apt-install::
 	sudo apt-get install \
 		ack-grep \
 		apt-transport-https \
+		ssh-askpass \
 		autoconf \
 		automake \
 		bison \
@@ -33,11 +34,14 @@ apt-install::
 		dnscrypt-proxy \
 		docker-engine \
 		dropbox \
+		feh \
 		git \
 		git-core \
 		google-chrome-stable \
 		htop \
 		i3 \
+		i3blocks \
+		keychain \
 		libcurl4-openssl-dev \
 		libffi-dev \
 		libgdbm-dev \
@@ -54,6 +58,7 @@ apt-install::
 		lxappearance \
 		numix-gtk-theme \
 		patch \
+		powertop \
 		python-gpgme \
 		rofi \
 		scrot \
@@ -63,6 +68,7 @@ apt-install::
 		xbacklight \
 		xinput \
 		zlib1g-dev
+	sudo apt autoremove
 
 install::
 	stow -v stow
