@@ -1,0 +1,29 @@
+#!/bin/bash
+
+AUDIO_HIGH_SYMBOL=' '
+AUDIO_LOW_SYMBOL=' '
+AUDIO_MUTED_SYMBOL=' '
+
+AUDIO_DEFAULT_COLOR="#ffffff"
+AUDIO_MUTED_COLOR="#777777"
+
+for name in VOLUME MUTED; do
+	read $name
+done < <(pacmd list-sinks | grep "volume: front\|muted:")
+
+VOLUME=$(echo "$VOLUME" | grep -o "[0-9]*%" | head -1 )
+VOLUME="${VOLUME%?}"
+COLOR=$DEFAULT_COLOR
+if [[ $MUTED =~ "yes" ]] ; then
+	SYMBOL=$AUDIO_MUTED_SYMBOL
+	COLOR=$AUDIO_MUTED_COLOR
+else
+	SYMBOL=$AUDIO_HIGH_SYMBOL
+	[[ $VOLUME -le 50 ]] && SYMBOL=$AUDIO_LOW_SYMBOL
+	[[ $VOLUME -eq 0 ]] && SYMBOL=$AUDIO_MUTED_SYMBOL
+	COLOR=$AUDIO_DEFAULT_COLOR
+fi
+
+echo "$SYMBOL$VOLUME%"
+echo "$SYMBOL$VOLUME%"
+echo "$COLOR"
