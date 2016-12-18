@@ -145,14 +145,24 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        font pango:DejaVu Sans Mono 20
+        status_command i3blocks -c ~/.config/i3/blocks.conf
 }
 
-# key-bindings
+# brightness
 bindsym XF86MonBrightnessUp exec brightness + 10
 bindsym XF86MonBrightnessDown exec brightness - 10
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master '5%+' # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master '5%-' # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # mute sound
 
-bindsym $mod+Shift+x exec lock
+# volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master '5%+' && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master '5%-' && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle && pkill -RTMIN+1 i3blocks
+
+# keyboard layouts
+bindsym $mod+Mod1+1 exec setxkbmap -layout us && pkill -RTMIN+2 i3blocks 
+bindsym $mod+Mod1+2 exec setxkbmap -layout sk -variant qwerty && pkill -RTMIN+2 i3blocks
+bindsym Control+Space exec echo test
+
+# lock
+bindsym $mod+Shift+x exec i3lock -efi ~/.config/wallpaper.png
+
