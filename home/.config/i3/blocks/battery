@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+SYMBOL_FLASH=" "
+SYMBOL_PLUG=" "
+SYMBOL100=" "
+SYMBOL80=" "
+SYMBOL60=" "
+SYMBOL40=" "
+SYMBOL20=" "
+
+COLOR100="#FFFFFF"
+COLOR90="#FFFFAA"
+COLOR80="#FFFF55"
+COLOR70="#FFFF00"
+COLOR60="#FFCC00"
+COLOR50="#FF9900"
+COLOR40="#FF6600"
+COLOR30="#FF3300"
+COLOR20="#FF0000"
+
+for name in BATTERY ADAPTER; do
+	read $name
+done < <(acpi -ba)
+
+BATTERY_STATUS=$(echo $BATTERY | grep -o ": [a-zA-Z]*, " | grep -o "[a-zA-Z]*")
+PERCENT_LEFT=$(echo $BATTERY | grep -o "[0-9]*%" | grep -o "[0-9]*" )
+TIME_LEFT=$(echo $BATTERY | grep -o "[0-9][0-9]:[0-9][0-9]")
+ADAPTER_STATUS=$(echo $ADAPTER | grep -o "o.*-line")
+
+SYMBOL_LEVEL=$SYMBOL100
+[[ $PERCENT_LEFT -le 80 ]] && SYMBOL_LEVEL=$SYMBOL80
+[[ $PERCENT_LEFT -le 60 ]] && SYMBOL_LEVEL=$SYMBOL60
+[[ $PERCENT_LEFT -le 40 ]] && SYMBOL_LEVEL=$SYMBOL40
+[[ $PERCENT_LEFT -le 20 ]] && SYMBOL_LEVEL=$SYMBOL20
+
+TEXT="$SYMBOL_LEVEL$PERCENT_LEFT%"
+
+if [[ $BATTERY_STATUS == "Charging" ]] ; then
+	TEXT="$TEXT $SYMBOL_FLASH$TIME_LEFT"
+fi
+if [[ $BATTERY_STATUS == "Discharging" ]] ; then
+	TEXT="$TEXT $TIME_LEFT"
+fi
+
+[[ $ADAPTER_STATUS == "on-line" ]] && TEXT="$SYMBOL_PLUG$TEXT"
+
+COLOR=$COLOR100
+[[ $PERCENT_LEFT -le 90 ]] && COLOR=$COLOR90
+[[ $PERCENT_LEFT -le 80 ]] && COLOR=$COLOR80
+[[ $PERCENT_LEFT -le 70 ]] && COLOR=$COLOR70
+[[ $PERCENT_LEFT -le 60 ]] && COLOR=$COLOR60
+[[ $PERCENT_LEFT -le 50 ]] && COLOR=$COLOR50
+[[ $PERCENT_LEFT -le 40 ]] && COLOR=$COLOR40
+[[ $PERCENT_LEFT -le 30 ]] && COLOR=$COLOR30
+[[ $PERCENT_LEFT -le 20 ]] && COLOR=$COLOR20
+
+echo $TEXT
+echo $TEXT
+echo $COLOR
