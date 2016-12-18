@@ -65,6 +65,7 @@ apt-install::
 		spotify-client \
 		sqlite3 \
 		virtualbox \
+		xautolock \
 		xbacklight \
 		xinput \
 		zlib1g-dev
