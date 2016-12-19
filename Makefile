@@ -64,6 +64,7 @@ apt-install::
 		scrot \
 		spotify-client \
 		sqlite3 \
+		tlp
 		virtualbox \
 		xautolock \
 		xbacklight \
