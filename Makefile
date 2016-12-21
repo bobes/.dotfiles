@@ -7,6 +7,7 @@ apt-keys::
 	sudo apt-key add etc/apt/signing_keys/docker.pub
 	sudo apt-key add etc/apt/signing_keys/dropbox.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
+	sudo apt-key add etc/apt/signing_keys/heroku.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
 
 apt-sources::
@@ -38,10 +39,10 @@ apt-install::
 		git \
 		git-core \
 		google-chrome-stable \
+		heroku \
 		htop \
 		i3 \
 		i3blocks \
-		keychain \
 		libcurl4-openssl-dev \
 		libffi-dev \
 		libgdbm-dev \
