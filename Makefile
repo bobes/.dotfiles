@@ -9,6 +9,7 @@ apt-keys::
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/heroku.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
+	sudo apt-key add etc/apt/signing_keys/virtualbox.pub
 
 apt-sources::
 	sudo rm /etc/apt/sources.list.d/*
@@ -67,7 +68,7 @@ apt-install::
 		sqlite3 \
 		strace \
 		tlp \
-		virtualbox \
+		virtualbox-5.1 \
 		xautolock \
 		xbacklight \
 		xinput \
