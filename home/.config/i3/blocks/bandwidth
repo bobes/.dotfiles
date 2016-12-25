@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+SYMBOL_DOWNLOAD=" "
+SYMBOL_UPLOAD=" "
+
+INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+
+if ! [ -e "/sys/class/net/$INTERFACE/operstate" ] || ! [ $(cat /sys/class/net/$INTERFACE/operstate) == "up" ] ; then
+	echo "$INTERFACE down"
+	echo "$INTERFACE down"
+	echo "#FF0000"
+	exit 0
+fi
+
+read RX < "/sys/class/net/$INTERFACE/statistics/rx_bytes"
+read TX < "/sys/class/net/$INTERFACE/statistics/tx_bytes"
+TIME=$(date +%s)
+
+FILE="/dev/shm/$(basename $0)-$INTERFACE"
+if [[ -f $FILE ]]; then
+	read LAST < $FILE
+fi
+
+echo "$TIME $RX $TX" > $FILE
+chmod 0666 $FILE
+
+LAST=(${LAST//;/})
+
+DELTA_TIME=$(($TIME-${LAST[0]}))
+DELTA_RX=$(($RX-${LAST[1]}))
+DELTA_TX=$(($TX-${LAST[2]}))
+
+RX_RATE=$(($DELTA_RX/$DELTA_TIME))
+TX_RATE=$(($DELTA_TX/$DELTA_TIME))
+
+RX_RATE_TEXT=$(numfmt --to=si $RX_RATE)
+TX_RATE_TEXT=$(numfmt --to=si $TX_RATE)
+
+TEXT="$SYMBOL_DOWNLOAD$RX_RATE_TEXT $SYMBOL_UPLOAD$TX_RATE_TEXT"
+
+echo $TEXT
+echo $TEXT
+echo "#FFFFFF"

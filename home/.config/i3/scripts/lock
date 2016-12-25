@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+setxkbmap -layout us && pkill -RTMIN+2 i3blocks && i3lock -efi ~/.config/wallpaper.png
