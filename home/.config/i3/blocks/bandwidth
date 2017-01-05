@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-SYMBOL_DOWNLOAD=" "
-SYMBOL_UPLOAD=" "
+SYMBOL_DOWNLOAD=""
+SYMBOL_UPLOAD=""
 
 INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
 
@@ -36,7 +36,7 @@ TX_RATE=$(($DELTA_TX/$DELTA_TIME))
 RX_RATE_TEXT=$(numfmt --to=si $RX_RATE)
 TX_RATE_TEXT=$(numfmt --to=si $TX_RATE)
 
-TEXT="$SYMBOL_DOWNLOAD$RX_RATE_TEXT $SYMBOL_UPLOAD$TX_RATE_TEXT"
+TEXT="$SYMBOL_DOWNLOAD $RX_RATE_TEXT $SYMBOL_UPLOAD $TX_RATE_TEXT"
 
 echo $TEXT
 echo $TEXT
