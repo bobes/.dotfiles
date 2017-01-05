@@ -25,6 +25,7 @@ apt-install::
 	sudo apt-get install \
 		ack-grep \
 		apt-transport-https \
+		autofs \
 		ssh-askpass \
 		autoconf \
 		automake \
@@ -33,6 +34,7 @@ apt-install::
 		ca-certificates gnupg2 \
 		compton \
 		curl \
+		dex \
 		dnscrypt-proxy \
 		docker-engine \
 		dropbox \
@@ -50,6 +52,7 @@ apt-install::
 		libgdbm3 \
 		libinput-tools \
 		libncurses5-dev \
+		libnotify-bin \
 		libreadline-dev \
 		libsqlite3-dev \
 		libssl-dev \
@@ -58,10 +61,12 @@ apt-install::
 		libxslt1-dev \
 		libyaml-dev \
 		lxappearance \
+		nfs-common \
 		numix-gtk-theme \
 		patch \
 		powertop \
 		python-gpgme \
+		qtpass \
 		rofi \
 		scrot \
 		spotify-client \
