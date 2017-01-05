@@ -1,0 +1,11 @@
+Exec=/usr/bin/dex %U
+Version=1.0
+Name=Launch Desktop File
+GenericName=Dex
+X-GNOME-FullName=Dex Desktop Launcher
+Comment=Launches Other Desktop Files
+Icon=myapp-icon
+StartupNotify=true
+Terminal=false
+Type=Application
+MimeType=application/x-desktop

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Windows 10 Pro
+GenericName=Virtual Machine
+Comment=Windows 10 Pro Virtual Machine
+Icon=virtualbox
+Exec=VBoxManage startvm "Windows 10 Pro"
+Terminal=false
+Type=Application
+Categories=Virtual
