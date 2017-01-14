@@ -3,7 +3,7 @@ Version=1.0
 Name=Github
 Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-github --no-first-run --no-default-browser-check --class=Github %U
 Terminal=false
-Icon=google-chrome
+Icon=github
 Type=Application
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;

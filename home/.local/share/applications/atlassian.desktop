@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
-Name=Google
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-google --no-first-run --no-default-browser-check --class=Google %U
+Name=Atlassian
+Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-atlassian --no-first-run --no-default-browser-check --class=Atlassian %U
 Terminal=false
-Icon=google-chrome
+Icon=atlassian
 Type=Application
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
