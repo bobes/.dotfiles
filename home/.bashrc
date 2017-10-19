@@ -9,7 +9,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # don't put duplicate lines or lines starting with space in the history
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # history size
 HISTSIZE=1000
