@@ -31,21 +31,23 @@ apt-install::
 		automake \
 		bison \
 		build-essential \
-		ca-certificates gnupg2 \
+		ca-certificates \
 		compton \
 		curl \
-		dex \
-		dnscrypt-proxy \
+		docker-compose \
 		docker-engine \
 		dropbox \
+		exuberant-ctags \
 		feh \
 		git \
 		git-core \
+		gnupg2 \
 		google-chrome-stable \
 		heroku \
 		htop \
 		i3 \
 		i3blocks \
+		imagemagick \
 		libcurl4-openssl-dev \
 		libffi-dev \
 		libgdbm-dev \
@@ -53,6 +55,7 @@ apt-install::
 		libinput-tools \
 		libncurses5-dev \
 		libnotify-bin \
+		libpng12-0 \
 		libreadline-dev \
 		libsqlite3-dev \
 		libssl-dev \
@@ -62,21 +65,18 @@ apt-install::
 		libyaml-dev \
 		lxappearance \
 		nfs-common \
-		numix-gtk-theme \
 		patch \
 		powertop \
 		python-gpgme \
 		qtpass \
-		rofi \
 		scrot \
 		spotify-client \
 		sqlite3 \
 		strace \
 		tlp \
+		tmux \
 		virtualbox-5.1 \
-		xautolock \
-		xbacklight \
-		xinput \
+		vlc \
 		zlib1g-dev
 	sudo apt autoremove
 
