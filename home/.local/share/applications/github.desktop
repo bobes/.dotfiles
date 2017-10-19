@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
-Name=Github
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-github --no-first-run --no-default-browser-check --class=Github %U
+Name=GitHub
+Exec=/usr/bin/google-chrome-stable --profile-directory=GitHub --no-first-run --no-default-browser-check --class=GitHub --new-tab github.com
 Terminal=false
 Icon=github
 Type=Application

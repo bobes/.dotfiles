@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Evernote
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-evernote --no-first-run --no-default-browser-check --class=Evernote %U
+Exec=/usr/bin/google-chrome-stable --profile-directory=Evernote --no-first-run --no-default-browser-check --class=Evernote www.evernote.com
 Terminal=false
 Icon=evernote
 Type=Application

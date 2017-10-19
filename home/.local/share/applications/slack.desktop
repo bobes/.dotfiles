@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Slack
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-slack --no-first-run --no-default-browser-check --class=Slack %U
+Exec=/usr/bin/google-chrome-stable --profile-directory=Slack --no-first-run --no-default-browser-check --class=Slack
 Terminal=false
 Icon=slack
 Type=Application

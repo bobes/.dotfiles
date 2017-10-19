@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Private
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-private --proxy-server=socks5://localhost:58080 --incognito --no-first-run --no-default-browser-check --class=Google %U
+Exec=/usr/bin/google-chrome-stable --profile-directory=.config/google-chrome-private --proxy-server=socks5://localhost:58080 --incognito --no-first-run --no-default-browser-check --class=Google %U
 Terminal=false
 Icon=private
 Type=Application

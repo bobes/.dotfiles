@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Atlassian
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-atlassian --no-first-run --no-default-browser-check --class=Atlassian %U
+Exec=/usr/bin/google-chrome-stable --profile-directory=Atlassian --class=Atlassian --new-tab boxdice.atlassian.net
 Terminal=false
 Icon=atlassian
 Type=Application

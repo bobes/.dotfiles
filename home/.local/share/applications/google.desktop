@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Google
-Exec=/usr/bin/google-chrome-stable --user-data-dir=.config/google-chrome-google --no-first-run --no-default-browser-check --class=Google %U
+Exec=/usr/bin/google-chrome-stable --profile-directory=Google --no-first-run --no-default-browser-check --class=Google --new-tab google.com
 Terminal=false
 Icon=google
 Type=Application
