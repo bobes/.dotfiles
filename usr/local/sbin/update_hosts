@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo > /etc/hosts.zero
+(curl --silent http://someonewhocares.org/hosts/zero/hosts | grep '^0\.0\.0\.0 ' >> /etc/hosts.zero)
+(curl --silent http://winhelp2002.mvps.org/hosts.txt | grep '^0\.0\.0\.0 ' | sed 's/.$//' >> /etc/hosts.zero)
+
+echo > /etc/hosts.new
+[ -f /etc/hosts.default ] && cat /etc/hosts.default >> /etc/hosts.new
+echo >> /etc/hosts.new
+
+cat /etc/hosts.zero | sed 's/#.*//' | sed 's/[ \t]*$//' | sort -u >> /etc/hosts.new
+rm /etc/hosts.zero
+mv /etc/hosts.new /etc/hosts

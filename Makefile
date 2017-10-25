@@ -86,3 +86,4 @@ install::
 	chmod 600 ~/.ssh/config
 	chmod 700 ~/.ssh/config.d
 	chmod 600 ~/.ssh/config.d/*
+	sudo stow -v -t /usr/local/sbin -d ~/.dotfiles/usr/local/ sbin
