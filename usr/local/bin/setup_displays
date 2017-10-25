@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+xrandr = `xrandr`
+
+internal = nil
+external = nil
+
+internal_name = nil
+internal_width = nil
+internal_height = nil
+current_name = nil
+external = []
+disconnected = []
+xrandr.split(/\n/).each do |line|
+  if /(?<name>.*) connected primary (?<width>\d+)x(?<height>\d+)/ =~ line
+    internal_name = name
+    internal_width = width.to_i
+    internal_height = height.to_i
+  elsif /(?<name>.*) connected / =~ line
+    current_name = name
+  elsif current_name && / +(?<width>\d+)x(?<height>\d+) / =~ line
+    external << [current_name, width.to_i, height.to_i]
+    current_name = nil
+  elsif /(?<name>.*) disconnected / =~ line
+    disconnected << name
+  end
+end
+
+command = "xrandr"
+total_width = 0
+max_height = 0
+external.each do |name, width, height|
+  command << " --output #{name} --auto --pos 0x#{total_width}"
+  if width < 3000
+    command << " --scale 2x2"
+    width *= 2
+    height *= 2
+  end
+  total_width += width
+  max_height = [max_height, height].max
+end
+internal_offset = [0, (total_width - internal_width) / 2].max
+command << " --output #{internal_name} --auto --pos #{internal_offset}x#{max_height}"
+disconnected.each do |name|
+  command << " --output #{name} --off"
+end
+puts command
+system command
+system "feh --bg-max ~/.config/wallpaper.png"
