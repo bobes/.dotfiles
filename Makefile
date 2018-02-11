@@ -4,8 +4,10 @@ sudoers::
 apt: apt-keys apt-sources apt-refresh apt-install
 
 apt-keys::
+	sudo apt-key add etc/apt/signing_keys/brave.pub
 	sudo apt-key add etc/apt/signing_keys/docker.pub
 	sudo apt-key add etc/apt/signing_keys/dropbox.pub
+	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/heroku.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
@@ -26,7 +28,6 @@ apt-install::
 		ack-grep \
 		apt-transport-https \
 		autofs \
-		ssh-askpass \
 		autoconf \
 		automake \
 		bison \
@@ -34,9 +35,11 @@ apt-install::
 		ca-certificates \
 		compton \
 		curl \
+		dnsutils \
 		docker-compose \
 		docker-engine \
 		dropbox \
+		enpass \
 		exuberant-ctags \
 		feh \
 		git \
@@ -55,7 +58,7 @@ apt-install::
 		libinput-tools \
 		libncurses5-dev \
 		libnotify-bin \
-		libpng12-0 \
+		libpng16-16 \
 		libreadline-dev \
 		libsqlite3-dev \
 		libssl-dev \
@@ -63,6 +66,8 @@ apt-install::
 		libxml2-dev \
 		libxslt1-dev \
 		libyaml-dev \
+		linux-image-amd64 \
+		linux-headers-amd64 \
 		lxappearance \
 		nfs-common \
 		patch \
@@ -72,6 +77,7 @@ apt-install::
 		scrot \
 		spotify-client \
 		sqlite3 \
+		ssh-askpass \
 		strace \
 		tlp \
 		tmux \
