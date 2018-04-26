@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+exit unless ARGV[0]
+index = ARGV[0].to_i
+exit unless ARGV[0] == index.to_s
+outputs = `xrandr | awk '/ connected / {print $1}'`.split
+exit unless index > 0 && index <= outputs.size
+output = outputs[index - 1]
+
+exec "i3-msg 'move workspace to output #{output}'"
