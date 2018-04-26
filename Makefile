@@ -21,16 +21,18 @@ apt-sources::
 
 apt-refresh::
 	sudo apt-get update
-	sudo apt-get upgrade
+	sudo apt-get upgrade --yes --no-install-recommends --fix-missing
 
 apt-install::
 	sudo apt-get install \
+    --yes --no-install-recommends --fix-missing \
 		ack-grep \
 		apt-transport-https \
 		autofs \
 		autoconf \
 		automake \
 		bison \
+		brave \
 		build-essential \
 		ca-certificates \
 		compton \
@@ -79,6 +81,7 @@ apt-install::
 		sqlite3 \
 		ssh-askpass \
 		strace \
+		tig \
 		tlp \
 		tmux \
 		virtualbox-5.1 \
