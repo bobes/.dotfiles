@@ -10,6 +10,7 @@ apt-keys::
 	sudo apt-key add etc/apt/signing_keys/enpass.pub
 	sudo apt-key add etc/apt/signing_keys/google.pub
 	sudo apt-key add etc/apt/signing_keys/heroku.pub
+	sudo apt-key add etc/apt/signing_keys/signal.pub
 	sudo apt-key add etc/apt/signing_keys/spotify.pub
 	sudo apt-key add etc/apt/signing_keys/virtualbox.pub
 
@@ -77,6 +78,7 @@ apt-install::
 		python-gpgme \
 		qtpass \
 		scrot \
+		signal-desktop \
 		spotify-client \
 		sqlite3 \
 		ssh-askpass \
