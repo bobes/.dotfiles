@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Chrome Default
+Exec=/usr/bin/google-chrome-stable --profile-directory=Default --class=Chrome-Default
+Terminal=false
+Icon=atlassian
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;

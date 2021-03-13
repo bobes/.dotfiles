@@ -100,10 +100,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/usr/sbin"
+
+if [ -d "/home/linuxbrew/.linuxbrew/bin" ] ; then
+	export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
 
 if [ -d "$HOME/bin" ] ; then
-	PATH="$HOME/bin:$PATH"
+  export PATH="$HOME/bin:$PATH"
 fi
 
 if [ -d "$HOME/.rbenv/bin" ] ; then
@@ -112,3 +116,6 @@ if [ -d "$HOME/.rbenv/bin" ] ; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/home/bobes/.cache/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;

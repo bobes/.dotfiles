@@ -44,6 +44,7 @@ apt-install::
 		dropbox \
 		enpass \
 		exuberant-ctags \
+		fd-find \
 		feh \
 		git \
 		git-core \

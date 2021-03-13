@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+xrandr = `xrandr`
+
+internal_name = nil
+disconnected = []
+xrandr.split(/\n/).each do |line|
+  if /(?<name>.*) connected primary / =~ line
+    internal_name = name
+  elsif /(?<name>.*) (dis)?connected / =~ line
+    disconnected << name
+  end
+end
+
+command = "xrandr"
+command << " --output #{internal_name} --auto"
+disconnected.each do |name|
+  command << " --output #{name} --off"
+end
+
+system command
+system "feh --bg-max ~/.config/wallpaper.png"

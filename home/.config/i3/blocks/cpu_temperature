@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+SYMBOL=🌡
+
+COLOR50="#FFFFFF"
+COLOR60="#FFFFAA"
+COLOR70="#FFFF55"
+COLOR75="#FFFF00"
+COLOR80="#FFCC00"
+COLOR85="#FF9900"
+COLOR90="#FF6600"
+COLOR95="#FF3300"
+COLOR100="#FF0000"
+
+VALUE=$(sensors | grep "Package" | sed 's/(.*//' | grep -o "[0-9]*\.[0-9]*")
+TEXT="$VALUE°C"
+
+COLOR=$COLOR50
+[[ $PERCENT_LEFT -ge 60 ]] && COLOR=$COLOR60
+[[ $PERCENT_LEFT -ge 70 ]] && COLOR=$COLOR70
+[[ $PERCENT_LEFT -ge 75 ]] && COLOR=$COLOR75
+[[ $PERCENT_LEFT -ge 80 ]] && COLOR=$COLOR80
+[[ $PERCENT_LEFT -ge 85 ]] && COLOR=$COLOR85
+[[ $PERCENT_LEFT -ge 90 ]] && COLOR=$COLOR90
+[[ $PERCENT_LEFT -ge 95 ]] && COLOR=$COLOR95
+[[ $PERCENT_LEFT -ge 100 ]] && COLOR=$COLOR100
+
+echo $TEXT
+echo $TEXT
+echo $COLOR
